@@ -1,0 +1,79 @@
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+
+# variables #
+# array with average - good 10k player names
+users = ["killbottt", "CircusGalop", "Jakads", "Merhaf", "awemanrank100", "ktkt42", "MAAAAAAAAAAAAAS", "quicalid4", "semyon422", "Estonians", "SK_la", "Ravile", "wjh123", "metyabo", "kloi34", "NotEnoughBanana", "MidSoul", "Omgforz", "[Crz]Polymath9", "-Squishy", "robby250", "Corncan", "onlymyaircraft", "kaythen", "tld_Homura", "Hyper%20Stream", "Rodrig0v", "ash11143", "sis2266", "wonder5193", "MsrButterfly", "Konpaku%20Sariel", "DarkSider2442", "llexceedll", "Kivicat", "Naruse%20Maria", "gosy777", "farlar", "karayss", "chKKi", "breazingstar", "Robbie15", "Cra%20Dow", "TNKSTC", "ponpon334", "DesKurisu", "Blitz78", "homukyuu", "Freek", "dewero", "Arland_t", "Chenut%20BS", "My%20Angel%20Koishi", "DawnX", "tldgk2006", "BossMadWolf", "Saerdna", "Tryr", "iamamistake", "yoonyul21", "XDerbyX", "high%20rolls", "SharpKunG1412", "RLRLRLRLRLRL", "HelloItsMagic", "enjoyit1025", "tangjinxi", "Lithifloresca", "[MY]ZYuan", "LMalagoli", "ThePerge", "Skochan", "dea3033", "danchree", "delanick", "Tacozz", "Isalie", "WiFiKI", "weisike2145151", "ccouy123", "anti-", "GrilledCheeese", "Sebaex", "hannanos", "Zeevee", "alto529", "9eater", "Rukitotoka", "kroniclex", "StarLords", "Go%20to%20HELL", "-GOD-", "Passed%20Elk", "K4L1X", "-Dragonite", "leqek", "Modren", "NOTPX00", "IamBaum", "itsLevande", "greatvictory", "Tornspirit", "broches", "bws1279", "AYAYAA", "crabgosu", "IceDynamix", "miresak", "-%20Estella%20-", "klop173", "Full%20Tablet", "Onta_Metalslug", "TrolloCat", "Mwooow", "stupud%20man", "alexeychikk", "aakk8765", "____ReFFeN____", "KaJun", "ZhanYu", "lotrzykjp", "thejackys", "animexamera", "_kagami", "KrizChin", "Claximillions", "Jaelani-sama", "mysticSilence", "PortableFreak", "[Haku]", "civ77", "DemoJesus", "Xainoss", "PolatReis", "Yuria", "DecadenceX3", "nemato", "Toshiyuki%20Doma", "ilovesohyeon", "KillBottt", "Tappu", "Juan_KW", "kind2783", "Belkross", "Mini%20Gaunt", "Spie812", "Lychopath", "Dari7K", "CharlisMadCut", "warning%20dark", "caakee", "DarkDave", "AiLiYaSi", "ByeForNow", "JJT", "cindsa", "Soup", "Anihc_YTR", "bourne907", "Huzair", "kadoen", "ru4an", "Akayro", "MrMatthYEW", "abraker", "Ahmad%20Jaelani", "Snow%20Note", "Sadcat", "xkre", "xX0T1Xx", "SolaceXCIX", "Oh%20Oh%20Kimochi", "Aishdoll-", "u_e", "XAaaa", "Comoholix", "[-Agonys-]", "Hthkr", "Nusob", "OsuMania10K", "BananenTropfen", "a%20ri%20su", "phee1sh", "SeeThroughMyEye", "[MY]xRay", "wkrdmsskan96", "MrGolden999", "Pianist207", "tsusai", "Gtrafh", "Str34mingh34rt", "Masteriosl", "hobdodgeries", "HiddenAlways", "Trent", "Phoenix99h", "tsaofaye", "[Dalgona]", "Exyph", "Kadiz", "Sparxe", "DarthSkrill", "_MHDmyt", "Star0v0", "Kimochi%20Dayou", "Beat-K", "SednA", "hapf", "Emdyion", "Vala", "Hell%20Maestro", "Justin14p", "GbrlPlayer", "Kaionacho", "Frogi", "kane%20K%20hiku", "serobor", "1hopeless", "adrthwfgjwftsj", "Doughh", "Cocaine", "Hwarry", "Captain%20Cusheen", "mufugai", "duelmaster33", "nsm285866172", "fullmoonsway", "z406607505", "MedelX", "Nivrad00", "AislaFanGirl", "Toujou-Basara", "[M]", "massamies", "SSTEVENN", "Unknown_player", "reneemanuel", "Retlepro16", "Bewww", "Kiligolo", "zxcv1544", "CelerenTheWolf", "Odeva", "sihu1025", "Nyxas", "JJ23789", "[%20uwizumi%20]", "evobryan", "Hlimak", "geon_0121", "YaLTeR", "Gathan123", "HHHHHHq", "DerFabri", "70percent", "MonsterKao", "pizzahead911", "Skyme", "Ing", "Xeno-", "Sky_Bottle", "DubWub", "Trush-Wick", "Jason%20Free", "mw2k6", "kuwai", "samuelhklumpers", "Lucas1809", "Ice%20Fairy", "sheen02", "[%20R%20o%20a%20d%20]", "flowsho", "zTulip", "SSum_Dy", "Rathuldr", "CrownedClown41", "Doctor%20Box", "takanashi_201", "Sweg420", "StepmaniaAUT", "DracusDakkrius", "Monaka", "DEV_YUTO", "Maino%20Zaki-", "[CuteAnimeGirl]", "FelixSpade", "FroddoB", "Tusbi", "Deus", "M%20i%20a%20u", "Dragon124515", "N3ptunee", "alex2252", "Sede", "ziesakai", "Blackheart", "EvenSta", "Rundumb", "oplusx", "Kanon%20Matsubara"]
+# chrome webdriver
+browser = webdriver.Chrome(executable_path=r"D:\Data\School\Programeren\Eigen_Projecten\python\AutoManiaDiscordInviter\chromedriver.exe")
+# dictionary with the main message in multiple languages
+message = {
+    'English': "Since the 10k community is very small, I'm trying to get it together...",
+    'Russian Federation': "ru",
+    'Germany': "de",
+    'France': "fr",
+    'Japan': "jp",
+    'South Korea': "kr",
+    'China': "cn",
+    'Indonesia': "in",
+}
+
+
+# send message to user's in specified range #
+firstLoop = True
+for i in range(0, 1):
+    # get user's data #
+    # go to user's profile page
+    browser.get('https://osu.ppy.sh/users/' + users[i])
+
+    # find id
+    ident = browser.current_url
+    ident = ident[25:]
+    print(ident)  # DEBUG #
+
+    # find country
+    lang = browser.find_element_by_xpath('//span[@class="profile-info__flag-text"]')
+    lang = lang.get_attribute('innerHTML')
+
+    # set language to 'English' if it's a country with little players or a country that speaks english anyway
+    if lang in message:
+        pass
+    else:
+        lang = 'English'
+    print(lang)  # DEBUG #
+
+    # go to message writer with user as destiny
+    browser.get('https://osu.ppy.sh/forum/ucp.php?i=pm&mode=compose&u=' + ident)
+
+    # login once #
+    if firstLoop:
+        firstLoop = False
+
+        # put 'killbottt' in username field
+        elem = browser.find_element_by_name('username')
+        elem.clear()
+        elem.send_keys('killbottt')
+        # put '46123456m' in password field
+        elem = browser.find_element_by_name('password')
+        elem.clear()
+        elem.send_keys('46123456m')
+        # press RETURN
+        elem.send_keys(Keys.RETURN)
+
+    # send message #
+    # type subject
+    elem = browser.find_element_by_name('subject')
+    elem.send_keys('10k discord server')
+    # click on ratio button of mania icon
+    elem = browser.find_element_by_xpath('//input[@id="17"]')
+    elem.click()
+    # type main message
+    elem = browser.find_element_by_name('message')
+    elem.send_keys(users[i] + ',')
+    elem.send_keys(Keys.RETURN)
+    elem.send_keys(Keys.RETURN)
+    elem.send_keys(message[lang])
+    # send message
+    ''' SHOULD FIRST BE UNCOMMENTED WHEN YOU ARE SURE THAT YOU WANT TO SEND THE MESSAGE
+    elem = browser.execute_script('return submitForm("post");')
+    '''
