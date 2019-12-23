@@ -1,4 +1,4 @@
-# AutoManiaDiscordInviter
+# Osu-Message-Sender
  
 ## Description
 This script sends a message to the upper 6 people in your users.txt.
@@ -18,4 +18,4 @@ This script sends a message to the upper 6 people in your users.txt.
 
 
 ## Screenshots
-![](/Screenshots/.png)
+![](/Screenshots/Osu%20Message.png.png)
